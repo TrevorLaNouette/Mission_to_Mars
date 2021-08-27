@@ -4,7 +4,8 @@ from bs4 import BeautifulSoup as soup
 import pandas as pd
 import datetime as dt
 from webdriver_manager.chrome import ChromeDriverManager
-
+# import  webdriver_manager
+# print(webdriver_manager.__version__)
 
 def scrape_all():
     # Initiate headless driver for deployment
@@ -85,8 +86,8 @@ def mars_facts():
     # Add try/except for error handling
     try:
         # Use 'read_html' to scrape the facts table into a dataframe
-        df = pd.read_html('https://data-class-mars-facts.s3.amazonaws.com/Mars_Facts/index.html')[0]
-
+        df = pd.read_html('https://galaxyfacts-mars.com')[0]
+        print("Look Here",df)
     except BaseException:
         return None
 
